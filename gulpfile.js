@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const svgSprite = require('gulp-svg-sprite');
 
 function browsersync() {
   browserSync.init({
@@ -14,6 +15,34 @@ function browsersync() {
     },
     notify: false
   })
+}
+
+function sprites() {
+  return src('app/images/icons/*.svg')
+  .pipe(svgSprite({
+    mode: {
+      stack: {
+        sprite:'../sprite.svg'
+      }
+    },
+    shape: {
+      transform: [
+        {
+          svgo: {
+            plugins: [
+              {
+                removeAttrs: {
+                  attrs: ['class', 'data-name', 'fill', 'stroke.*']
+                }
+              },
+              { removeXMLNS: true },
+            ]
+          }
+        }
+      ]
+    }
+  }))
+  .pipe(dest('app/images'))
 }
 
 function styles() {
@@ -31,6 +60,9 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -71,6 +103,7 @@ function cleanDist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/images/icons/*.svg'], sprites);
   watch(['app/**/*.html']).on('change', browserSync.reload);
 }
 
@@ -82,4 +115,4 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, scripts, sprites, browsersync, watching);
