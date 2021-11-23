@@ -1,0 +1,128 @@
+.slider-promotion {
+  position: relative;
+  
+  &__item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    
+    height: 600px;
+  }
+
+  &__box {
+    width: 100%;
+
+    padding: 24px 24px;
+
+    color: $dark-500;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+  }
+
+  &__title {
+    max-width: 770px;
+
+    font-family: 'Ruda', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    
+    span {
+      color: $red-900;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 30px;
+
+    font-size: 16px;
+  }
+
+  &__prev,
+  &__next {
+    padding: 14px 20px;
+
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    outline: transparent;
+    
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+
+    transform: translateY(-50%);
+    
+    outline: transparent;
+    transition: background 0.3s linear;
+
+    &::before {
+      content: '';
+
+      display: block;
+      width: 19px;
+      height: 32px;
+      
+      background-color: $dark-500;
+
+      transition: background 0.3s linear;
+    }
+
+    &:focus {
+      background-color: #F2F2F2;
+      box-shadow: 0 0 0 3px rgba(99, 166, 14, 0.5);
+    }
+
+    &:hover {
+      background-color: $green-100;
+    }
+
+    &:hover::before {
+      background-color: $green-900;
+    }
+
+    &:active {
+      background-color: #F3F3F2;
+      box-shadow: none;
+    }
+
+    &:active::before {
+      background-color: $green-900;
+    }
+  }
+
+  &__prev {
+    left: 50px;
+    &::before {
+      mask: url('../images/sprite.svg#arrow-left') center / cover no-repeat;
+    }
+  }
+
+  &__next {
+    right: 50px;
+    &::before {
+      mask: url('../images/sprite.svg#arrow-right') center / cover no-repeat;
+    }
+  }
+
+  .slick-disabled {
+    opacity: 0.8;
+    cursor: default;
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: none;
+    }
+
+    &:hover::before {
+      background-color: $dark-500;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.banners-wrap {
+  margin-bottom: 72px;
+}
+
+.banners {
+  &__list {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-column-gap: 30px;
+
+    color: $dark-500;
+  }
+
+  &__item {
+    padding: 76px 32px 84px;
+
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &__news {
+    max-width: 346px;
+  }
+
+	&__title {
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  &__text {
+    margin-bottom: 12px;
+
+    font-family: 'Ruda';
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  &__link {
+    padding-bottom: 6px;
+    
+    border-bottom: 2px solid;
+  }
+}

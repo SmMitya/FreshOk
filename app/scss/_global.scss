@@ -7,10 +7,12 @@ body {
   display: flex;
   flex-direction: column;
 
-  @extend %open-400;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
   font-style: normal;
+  letter-spacing: 0.03em;
   color: $dark-900;
 
   background-color: $white;
@@ -27,8 +29,7 @@ body {
 }
 
 .wrap {
-  padding-top: 75px;
-  margin-bottom: 75px;
+  padding: 75px 0;
 }
 
 .sr-only {
@@ -46,11 +47,10 @@ body {
 
 .btn {
   padding: 12px 24px;
-  display: inline-block;
+  display: block;
 
   font-size: 18px;
   line-height: 1.3;
-  letter-spacing: 0.03em;
   color: $white;
 
   outline: transparent;
@@ -58,7 +58,9 @@ body {
   border: 0;
   border-radius: 6px;
 
-  @extend %transition-4;
+  transition: opacity 0.3s linear,
+              color 0.3s linear,
+              background 0.3s linear;
 
   &:focus {
     box-shadow: 0 0 0 4px $green-100;
@@ -89,50 +91,87 @@ body {
     }
 
     &:active {
-      box-shadow: inset 0 10px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: none;
       color: rgba(99, 166, 14, 0.5);
+      background-color: transparent;
     }
-  }
-}
-
-.link {
-  @extend %transition-3;
-
-  &:focus {
-    box-shadow: 0 0 0 3px $green-200;
-    border-radius: 3px;
-  }
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  &:active {
-    color: $green-100;
-    box-shadow: none;
   }
 }
 
 .title {
   margin-bottom: 30px;
 
-  @extend %ruda-600;
+  font-family: 'Ruda', sans-serif;
+  font-weight: 600;
   font-size: 32px;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
   text-align: center;
 }
 
-.menu {
+.form {
+  display: flex;
+  align-items: center;
+    
+  background-color: $white;
+  border-radius: 6px;
+
+  &__input {
+    width: 100%;
+    padding-right: 10px;
+
+    letter-spacing: 0.03em;
+    color: $dark-800;
+
+    outline: transparent;
+  }
+
+  &__btn {
+    padding: 15px 52px;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: $white;
+
+    outline: transparent;
+    border: 0;
+
+    background-color: $dark-800;
+    border-radius: 0 6px 6px 0;
+
+    transition: opacity 0.3s linear,
+                color 0.3s linear,
+                background 0.3s linear;
+
+    &:focus {
+      box-shadow: 0 0 0 4px $green-100;
+    }
+  
+    &:hover {
+      background-color: rgba(49, 53, 43, 0.85);
+    }
+  
+    &:active {
+      color: rgba(255, 255, 255, 0.5);
+      box-shadow: none;
+      background-color: $dark-800;
+    }
+  }
+}
+
+.filter-nav {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  &__item:not(:last-child) {
-    margin-right: 24px;
+  &__item {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
   }
 
-  &__link {
+  &__btn {
     font-size: 15px;
 
     font-weight: 700;
@@ -141,7 +180,8 @@ body {
     text-transform: uppercase;
 
     border-bottom: 3px solid transparent;
-    @extend %transition-1;
+    outline: transparent;
+    transition: color 0.3s linear;
 
     &:focus {
       box-shadow: 0 0 0 3px #E0EDCF;
@@ -156,37 +196,417 @@ body {
       border-bottom: 3px solid $green-100;
       box-shadow: none;
     }
+
+    &--active {
+      border-bottom: 3px solid rgba(99, 166, 14, 0.2);;
+    }
   }
 
-  &__link--active {
-    border-bottom: 3px solid $green-100;
+  &__link {
+    &--active {
+      border-bottom: 3px solid $green-100;
+    } 
   }
 }
 
+.product-card {
+  position: relative;
 
-.badge {
-  display: inline-block;
-  padding: 3px 6px;
-
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: $white;
-
+  background: $white;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  box-sizing: border-box;
   border-radius: 6px;
-
-  &--green {
-    background-color: $green-900;
+  
+  &:hover {
+    border: 1px solid $green-900;
   }
 
-  &--red {
-    background-color: $red-900;
+  &__favorite {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+
+    outline: transparent;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 28px;
+
+      vertical-align: middle;
+      mask: url('../images/sprite.svg#favorite') center / contain no-repeat;
+      background-color: $silver-600;
+
+      transition: background 0.3s linear,
+                  opacity 0.3s linear;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px #E0EDCF;
+      border-radius: 3px;
+    }
+
+    &:hover::before {
+      background-color: $yellow-900;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:active::before {
+      background-color: $yellow-900;
+      opacity: 0.5;
+    }
   }
 
-  &--orange {
-    background-color: $orange-900;
+  &__images {
+    position: relative;
+    margin: 57px 0 18px;
+  }
+
+  &__img-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    transition: opacity 0.3s linear;
+
+    &::before {
+      content: '';
+  
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      mask: url('../images/sprite.svg#search') center / cover no-repeat;
+      background-color: $green-900;
+    }
+
+    &::after {
+      content: '';
+  
+      position: absolute;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 18px;
+  }
+
+  &__title {
+    height: 60px;
+    padding: 0 18px;
+    margin-bottom: 9px;
+    
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 0 18px 0 21px;
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+  }
+
+  &__old-price,
+  &__price {
+    display: none;
+  }
+
+  &__old-price {
+    position: relative;
+
+    margin-bottom: 3px;
+
+    color: $silver-600;
+
+    &::before {
+      content: '';
+  
+      position: absolute;
+      top: 6px;
+      left: 0;
+      
+      width: 100%;
+      height: 1px;
+      background-color: $silver-600;
+  
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__price {
+    color: $dark-500;
+    &--on {
+      display: block;
+    }
+  }
+
+  &__btn {
+    padding: 8px;
+
+    &::before {
+      content: '';
+  
+      display: block;
+      width: 16px;
+      height: 16px;
+      mask: url('../images/sprite.svg#cart') center / cover no-repeat;
+      background-color: $white;
+    }
+  }
+}
+
+.badges {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__item {
+    display: none;
+    padding: 3px 6px;
+  
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+  
+    border-radius: 6px;
+  
+    &--on {
+      display: inline-block;
+    }
+
+    &--new {
+      background-color: $green-900;
+    }
+  
+    &--sale {
+      background-color: $red-900;
+    }
+  
+    &--top {
+      background-color: $orange-900;
+    }
+  }
+}
+
+.product-card-min {
+  display: flex;
+  align-items: flex-start;
+
+  .product-card {
+
+    &__top {
+      margin-right: 2px;
+    }
+
+    &__images {
+      margin: 0;
+    }
+
+    &__img {
+      max-width: none;
+    }
+
+    &__desc {
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+
+    &__title {
+      margin-bottom: 7px;
+      padding: 0;
+      height: 58px;
+    }
+
+    &__bottom {
+      padding: 0;
+      display: block;;
+    }
+
+    &__stock-item {
+      margin-bottom: 5px;
+
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: none;
+
+      &--yes {
+        color: $green-900;
+      }
+
+      &--no {
+        color: $red-900;
+      }
+
+      &--end {
+        color: $silver-600;
+      }
+
+      &--on {
+        display: block;
+      }
+    }
+
+    &__prices {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    &__price {
+      margin-right: 2px;
+      
+      font-weight: 600;
+      font-size: 20px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+    &__old-price {
+      margin-bottom: 0;
+      margin-right: 3px;
+
+      font-size: 12px;
+    }
+
+    &__star {
+      display: flex;
+      font-weight: 700;
+      font-size: 14px;
+      color: $dark-500;
+
+      &::after {
+        content: '';
+
+        margin-left: 2px;
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        mask: url('../images/sprite.svg#star') center / cover no-repeat;
+        background-color: $yellow-900;
+      }
+    }
+  }
+
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-right: 12px;
+  }
+
+  &__link {
+    display: block;
+    outline: transparent;
+    transition: opacity 0.3s linear;
+    &:focus {
+      box-shadow: 0 0 0 3px $green-200;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:active::before {
+      background-color: $green-100;
+      box-shadow: none;
+    }
+
+    &::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    background-color: $white;
+
+    transition: background 0.3s linear;
+    }
+    
+    &--face {
+      &::before {
+        mask: url('../images/sprite.svg#facebook') center / cover no-repeat;
+      }
+      
+    }
+  
+    &--you {
+      &::before {
+        mask: url('../images/sprite.svg#youtube') center / cover no-repeat;
+      }
+    }
+  
+    &--tel {
+      &::before {
+        mask: url('../images/sprite.svg#telegram') center / cover no-repeat;
+      }
+    }
+  
+    &--inst {
+      &::before {
+        mask: url('../images/sprite.svg#instagram') center / cover no-repeat;
+      }
+    }
   }
 }
 

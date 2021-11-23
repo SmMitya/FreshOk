@@ -1,15 +1,22 @@
 .footer {
   background-color: $dark-800;
   color: $white;
+  letter-spacing: normal;
 
   &__top {
-    padding: 30px 0;
+    padding: 34px 0 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  &__bottom {
+    padding: 24px 0 21px;
+  }
+}
+
+.footer-top {
   &__logo {
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
   }
 
   &__inner {
@@ -17,40 +24,51 @@
     justify-content: space-between;
   }
 
+  &__letter {
+    max-width: 306px;
+    width: 100%;
+    margin-right: 70px;
+  }
+
   &__text {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
     line-height: 1;
   }
 
   &__form {
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
-  }
+    background-color: $white; 
 
-  &__form-item {
-    border-radius: 6px 0 0 6px;  
-    background-color: $white;  
-  }
+    .form {
+      &__input {
+        padding: 0 11px;
+  
+        outline: transparent;
 
-  &__input {
-    padding: 11px 11px;
-    outline: transparent;
-  }
+        &::placeholder {
+          color: #4F4F4F;;
+        }
+      }
+  
+      &__btn {
+        padding: 13px 16px;
+  
+        font-size: 12px;
+        line-height: 1.3;
+        text-transform: uppercase;
+  
+        background-color: $green-900;
+        border-radius: 0 6px 6px 0; 
 
-  &__input::placeholder {
-    color: #4F4F4F;;
-  }
-
-  &__btn {
-    padding: 13px 16px;
-
-    font-size: 12px;
-    line-height: 1.33;
-    text-transform: uppercase;
-
-    border-radius: 0 6px 6px 0;  
+        &:hover {
+          background-color: #4D810C;
+        }
+    
+        &:active {
+          background-color: $green-900;
+        }
+      }
+    } 
   }
 
   &__list {
@@ -59,19 +77,30 @@
     grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
     grid-gap: 18px 75px;
-   
   }
+}
 
-  &__address,
-  &__phone {
-    display: block;
+.contacts-footer {
+  &__list {
     margin-bottom: 18px;
-  }
 
-  &__bottom {
-    padding: 24px 0;
+    font-style: normal;
   }
+  
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+}
 
+.footer-bottom {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
   &__copyright {
     text-transform: uppercase;
   }
@@ -81,75 +110,9 @@
     align-items: center;
   }
 
-  &__accept-item:not(:last-child) {
-    margin-right: 24px;
-  }
-
-  &__img {
-    display: block;
-  }
-
-  &__img--visa:before,
-  &__img--master:before {
-    content: '';
-    display: block;
-    height: 29px;
-    background-color: $white;
-  }
-
-  &__img--visa:before {
-    width: 93px;
-    mask: url('../images/sprite.svg#visa') center / cover no-repeat;
-  }
-
-  &__img--master:before {
-    width: 49px;
-    mask: url('../images/sprite.svg#mastercard') center / cover no-repeat;
-  }
-}
-
-.socials {
-  display: flex;
-  align-items: center;
-
-  &__item {
-    margin-right: 12px;
-  }
-
-  &__link {
-    display: block;
-  }
-
-  &__link--face::before,
-  &__link--you::before,
-  &__link--tel::before,
-  &__link--inst::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 32px;
-
-    background-color: $white;
-  }
-
-  &__link--face::before {
-    mask: url('../images/sprite.svg#facebook') center / cover no-repeat;
-  }
-
-  &__link--you::before {
-    mask: url('../images/sprite.svg#youtube') center / cover no-repeat;
-  }
-
-  &__link--tel::before {
-    mask: url('../images/sprite.svg#telegram') center / cover no-repeat;
-  }
-
-  &__link--inst::before {
-    mask: url('../images/sprite.svg#instagram') center / cover no-repeat;
-  }
-
-  &__link:active::before {
-    background-color: $green-100;
-    box-shadow: none;
+  &__accept-item {
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
   }
 }
