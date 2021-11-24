@@ -1,5 +1,22 @@
 $(function() {
 
+  const menuBtn = $('.header-catalog__btn'),
+        menu    = $('.header-catalog__list');
+
+  menuBtn.on('click', function (){
+    menu.toggleClass('header-catalog__list--active');
+  });
+
+  $('.header-catalog a').on('click', function (){
+    menu.removeClass('header-catalog__list--active');
+  });
+
+  $(document).click(function (e) {
+      if ( !menuBtn.is(e.target) && !menu.is(e.target) && menu.has(e.target).length === 0) {
+          menu.removeClass('header-catalog__list--active');
+      };
+  });
+
   $('.slider-brands__wrapper').slick({
     arrows: false,
     slidesToShow: 6
