@@ -16,6 +16,13 @@ body {
   color: $dark-900;
 
   background-color: $white;
+
+  transition: background-color 0.3s linear
+}
+
+.bg-gray {
+  background-color: rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .main {
@@ -30,6 +37,10 @@ body {
 
 .wrap {
   padding: 72px 0;
+
+  @include media-2 {
+    padding: 48px 0;
+  }
 }
 
 .sr-only {
@@ -47,7 +58,7 @@ body {
 
 .btn {
   padding: 12px 24px;
-  display: block;
+  display: inline-block;
 
   font-size: 18px;
   line-height: 1.3;
@@ -61,7 +72,7 @@ body {
 
   transition: opacity 0.3s linear,
               color 0.3s linear,
-              background 0.3s linear;
+              background-color 0.3s linear;
 
   &:focus {
     box-shadow: 0 0 0 4px $green-100;
@@ -99,6 +110,59 @@ body {
   }
 }
 
+.logo {
+  max-width: 200px;
+  width: 100%;
+
+  &__img {
+    object-fit: cover;
+    object-position: top;
+
+    &--short {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  display: none;
+
+  width: 30px;
+  height: 22px;
+  margin-left: 7px;
+
+  &__item {
+    display: block;
+    height: 2px;
+
+    background-color: $white;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+
+      background-color: $white;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  @include media-2 {
+    display: block;
+  }
+}
+
 .title {
   margin-bottom: 30px;
 
@@ -107,6 +171,12 @@ body {
   font-size: 32px;
   text-transform: uppercase;
   text-align: center;
+
+  @include media-3 {
+    margin-bottom: 24px;
+
+    font-size: 24px;
+  }
 }
 
 .form {
@@ -143,7 +213,7 @@ body {
 
     transition: opacity 0.3s linear,
                 color 0.3s linear,
-                background 0.3s linear;
+                background-color 0.3s linear;
 
     &:focus {
       box-shadow: 0 0 0 4px $green-100;
@@ -167,8 +237,10 @@ body {
   align-items: center;
 
   &__item {
-    &:not(:last-child) {
-      margin-right: 24px;
+    margin: 0 12px;
+    
+    @include media-3 {
+        margin-bottom: 11px;
     }
   }
 
@@ -203,10 +275,8 @@ body {
     }
   }
 
-  &__link {
-    &--active {
-      border-bottom: 3px solid $green-100;
-    } 
+  @include media-3 {
+    flex-wrap: wrap;
   }
 }
 
@@ -216,40 +286,60 @@ body {
   display: flex;
   flex-direction: column;
 
+  padding-top: 57px;
   height: 100%;
 
   background: $white;
   border: 1px solid rgba(17, 17, 17, 0.2);
   box-sizing: border-box;
   border-radius: 6px;
+
+  transition: border 0.3s linear;
   
   &:hover {
-    border: 1px solid $green-900;
+    border-color: $green-900;
   }
 
   &__favorite {
     position: absolute;
-    top: 7px;
-    right: 6px;
+    top: 10px;
+    right: 5px;
+    z-index: 2;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
-    line-height: 44px;
-
+    
     outline: transparent;
 
-    &:before {
+    @include media-3 {
+      width: 32px;
+      height: 32px;
+    }
+
+    &::before {
+      background-color: $yellow-900;
+      opacity: 0.5;
+    }
+
+    &::before {
       content: '';
       display: inline-block;
-      width: 100%;
-      height: 28px;
+      width: 32px;
+      height: 29px;
 
-      vertical-align: middle;
-      mask: url('../images/sprite.svg#favorite') center / contain no-repeat;
+      mask: url('../images/sprite.svg#favorite') center / cover no-repeat;
       background-color: $silver-600;
 
-      transition: background 0.3s linear,
+      transition: background-color 0.3s linear,
                   opacity 0.3s linear;
+
+      @include media-3 {
+        width: 24px;
+        height: 21px;
+      }
     }
 
     &:focus {
@@ -257,28 +347,42 @@ body {
       border-radius: 3px;
     }
 
-    &:hover::before {
-      background-color: $yellow-900;
+    &:hover {
+      &::before {
+        background-color: $yellow-900;
+      }
     }
-
+    
     &:active {
       box-shadow: none;
     }
 
-    &:active::before {
-      background-color: $yellow-900;
-      opacity: 0.5;
+    &:active {
+      &::before {
+        background-color: $yellow-900;
+        opacity: 0.5;
+      }
     }
   }
 
   &__images {
     position: relative;
-    padding-top: 57px;
+    width: 100%;
+    padding-bottom: 72.15%;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   
   &__img-link {
     position: absolute;
-    top: 0;
+    top: 0px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -318,19 +422,27 @@ body {
     }
   }
 
-  &__desc {
+  &__descr {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     padding: 18px;
+
+    @include media-3 {
+      padding: 12px;
+    }
   }
 
   &__title {
     flex-grow: 1;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
     
     font-weight: 600;
     @include line-clamp(3);
+
+    @include media-4 {
+      margin-bottom: 48px;
+    }
   }
 
   &__bottom {
@@ -346,8 +458,7 @@ body {
     line-height: 1;
   }
 
-  &__old-price,
-  &__price {
+  &__old-price {
     display: none;
   }
 
@@ -375,6 +486,7 @@ body {
 
   &__price {
     color: $dark-500;
+
     &--on {
       display: block;
     }
@@ -382,6 +494,7 @@ body {
 
   &__btn {
     padding: 8px;
+    border-radius: 3px;
 
     &::before {
       content: '';
@@ -444,56 +557,44 @@ body {
 .product-card-min {
   display: flex;
   flex-direction: row;
+  padding: 12px 12px 11px 12px;
 
   .product-card {
-   
-    &__top {
-      padding: 12px 12px 11px;
-    }
+    
     &__images {
-      padding-top: 0;
+      max-width: 100px;
+      padding-bottom: 36.51%;
     }
-
-    &__img {
-      max-width: none;
-      object-fit: cover;
-    }
-
-    &__desc {
-      padding: 12px 12px 11px 0;
+  
+    &__descr {
+      padding: 0 0 0 12px;
     }
 
     &__title {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
 
-    &__bottom {
-      display: block;
+    &__stock {
+      margin-bottom: 5px;
     }
 
     &__stock-item {
-      margin-bottom: 5px;
-
       font-size: 10px;
       line-height: 1;
       font-weight: 600;
       text-transform: uppercase;
-      display: none;
+      display: block;
 
-      &--yes {
+      &--instore {
         color: $green-900;
       }
 
-      &--no {
+      &--ended {
         color: $red-900;
       }
 
-      &--end {
+      &--no {
         color: $silver-600;
-      }
-
-      &--on {
-        display: block;
       }
     }
 
@@ -501,10 +602,13 @@ body {
       flex-direction: row;
       align-items: flex-end;
       justify-content: space-between;
+      flex-shrink: 0;
+      
+      margin-right: 5px;
     }
 
     &__price {
-      margin-right: 2px;
+      margin-right: 12px;
       
       font-weight: 600;
       font-size: 20px;
@@ -516,7 +620,6 @@ body {
 
     &__old-price {
       margin-bottom: 0;
-      margin-right: 3px;
 
       font-size: 12px;
     }
@@ -531,6 +634,8 @@ body {
         content: '';
 
         margin-left: 2px;
+        margin-right: 2px;
+        
         display: block;
         width: 16px;
         height: 16px;
@@ -540,7 +645,9 @@ body {
       }
     }
   }
-
+  @include media-4 {
+    padding-bottom: 10px;
+  }
 }
 
 .socials {
@@ -548,13 +655,16 @@ body {
   align-items: center;
 
   &__item {
-    margin-right: 12px;
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
   &__link {
     display: block;
     outline: transparent;
     transition: opacity 0.3s linear;
+
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
@@ -566,11 +676,10 @@ body {
 
     &:active {
       box-shadow: none;
-    }
-
-    &:active::before {
-      background-color: $green-100;
-      box-shadow: none;
+      &::before {
+        background-color: $green-100;
+        box-shadow: none;
+      }
     }
 
     &::before {
@@ -581,14 +690,13 @@ body {
 
     background-color: $white;
 
-    transition: background 0.3s linear;
+    transition: background-color 0.3s linear;
     }
     
     &--face {
       &::before {
         mask: url('../images/sprite.svg#facebook') center / cover no-repeat;
       }
-      
     }
   
     &--you {
@@ -611,3 +719,125 @@ body {
   }
 }
 
+.btn-close {
+  position: relative;
+
+  &__item {
+    width: 24px;
+    height: 24px;
+    display: block;
+
+    &::before,
+    &::after {
+      content: '';
+      top: 50%;
+      right: 0;
+      position: absolute;
+
+      width: 100%;
+      height: 2px;
+      background-color: $dark-800;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--gray {
+    .btn-close {
+      &__item {
+        &::before,
+        &::after {
+          background-color: $silver-600;
+       }
+      }
+    }
+  }
+}
+
+.counter-btn {
+  .jq-number {
+    &__field {
+      width: 36px;
+      height: 24px;
+
+      font-family: 'OpenSans', sans-serif;
+      font-size: 16px;
+
+      border: none;
+      background-color: rgba(99, 166, 14, 0.1);;
+      border-radius: 0;
+      box-shadow: none;
+
+      input {
+        text-align: center;
+        padding: 0 4px;
+        font: inherit;
+        line-height: 1;
+        color: $dark-500;
+      }
+    }
+
+    &__spin {
+      &.minus,
+      &.plus {
+        position: absolute;
+        top: 0;
+        width: 24px;
+        height: 24px;
+
+        border: none;
+        border-radius: 0;
+        background: none;
+        background-color: $green-900;
+        box-shadow: none;
+        text-shadow: none;
+        cursor: pointer;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: 4px;
+        width: 16px;
+        height: 1px;
+
+        background-color: $white;
+        border: none;
+      }
+    }
+      
+    &__spin {
+      &.minus {
+        left: -24px;
+
+        border-radius: 3px 0 0 3px;
+      }
+    }
+    
+    &__spin {
+      &.plus {
+        right: 12px;
+
+        border-radius: 0 3px 3px 0;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: 11px;
+          width: 1px;
+          height: 16px;
+
+          background-color: $white;
+        }
+      }
+    } 
+  }
+}

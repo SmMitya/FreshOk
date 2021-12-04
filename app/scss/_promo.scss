@@ -6,10 +6,12 @@
     .filter-nav {
 
       &__item {
-        &:not(:last-child) {
-          margin-right: 30px;
-        }
+        margin: 0 15px;
       }
+    }
+
+    @include media-1 {
+      margin-bottom: 24px;
     }
   }
 
@@ -18,15 +20,46 @@
     flex-wrap: wrap;
     margin-left: -30px;
     margin-bottom: 14px;
+    
+    @include media-1 {
+      margin-left: -10px;
+    }
+
+    @include media-2 {
+      margin-left: -5px;
+    }
+
+    @include media-4 {
+      margin-left: 0;
+      margin-bottom: 5px;
+    }
   }
 
   &__item {
     margin-left: 30px;
     margin-bottom: 30px;
     width: calc(25% - 30px);
+
+    @include media-1 {
+      margin-left: 10px;
+      margin-bottom: 15px;
+      width: calc(33.3333% - 10px);
+    }
+
+    @include media-2 {
+      margin-left: 5px;
+      width: calc(50% - 5px);
+    }
+
+    @include media-4 {
+      padding: 0 22px;
+      margin-left: 0;
+      width: 100%;
+    }
   }
  
   &__btn {
+    display: block;
     margin: 0 auto;
   }
 }

@@ -11,19 +11,6 @@ $red-900: #CF3E3B;
 $orange-900: #FF7A00;
 $yellow-900: #FFB800;
 
-@mixin responsive-ratio($x,$y, $pseudo: false) {
-  $padding: unquote( ( $y / $x ) * 100 + '%' );
-  @if $pseudo {
-   &::before {
-    @include pseudo($pos: relative);
-    width: 100%;
-    padding-top: $padding;
-   }
-  } @else {
-   padding-top: $padding;
-  }
-};
-
 @mixin line-clamp($lines) {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -33,3 +20,38 @@ $yellow-900: #FFB800;
   -webkit-line-clamp: $lines;
   -webkit-box-orient: vertical;
 };
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+   }
+}
+
+$md1: 1200px;
+$md2: 992px;
+$md3: 768px;
+$md4: 576px;
+
+@mixin media-1 {
+  @media (max-width: $md1) {
+    @content;
+   }
+}
+
+@mixin media-2 {
+  @media (max-width: $md2) {
+    @content;
+   }
+}
+
+@mixin media-3 {
+  @media (max-width: $md3) {
+    @content;
+   }
+}
+
+@mixin media-4 {
+  @media (max-width: $md4) {
+    @content;
+   }
+}
