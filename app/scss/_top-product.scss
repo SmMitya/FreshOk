@@ -1,0 +1,39 @@
+.top-product {
+  &__filter-nav {
+    margin-bottom: 45px;
+
+    @include media-3 {
+      margin-bottom: 9px;
+    }
+  }
+
+  &__catalog {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: -30px; 
+    margin-bottom: 18px;
+
+    @include media-3 {
+      margin-left: -5px;
+      margin-bottom: 19px;
+    }
+  }
+
+  &__item {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: calc(25% - 30px);
+
+    @include media-3 {
+      margin-left: 5px;
+      margin-bottom: 5px;
+      width: calc(50% - 5px);
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,23 @@
+.slider-brands {
+
+  .slick-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    opacity: 0.5;
+
+    transition: opacity 0.3s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
