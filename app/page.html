@@ -1,1066 +1,415 @@
-<header class="header">
-  <nav class="header__nav">
-    <div class="header__top header-top">
-      <div class="header-top__container container">
-        <ul class="header-top__list">
-          <li class="header-top__item">
-            <a class="header-top__link header-top__link--address" href="#">Адрес и время доставки</a>
-          </li>
-          <li class="header-top__item">
-            <a class="header-top__link header-top__link--tel" href="tel:+7907288365">Горячая линия 24/7</a>
-          </li>
-        </ul>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon/favicon-lg.png" sizes="512x512" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon/favicon-sm.png" sizes="32x32"  type="image/x-icon">
+  <title>Онлайн маркет ФрешОк</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
 
-        <ul class="header-top__list">
-          <li class="header-top__item">
-            <a class="header-top__link" href="#">Доставка</a>
-          </li>
-          <li class="header-top__item">
-            <a class="header-top__link" href="#">О нас</a>
-          </li>
-          <li class="header-top__item">
-            <a class="header-top__link" href="#">Новости</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="header__bottom header-bottom">
-      <div class="header-bottom__container container">
-        <a class="header-bottom__logo logo" href="#">
-          <img class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип онлайн-маркета ФрешОк">
-        </a>
-
-        <div class="header-bottom__catalog catalog">
-          <button class="catalog__btn" type="button">Каталог продуктов</button>
-          <ul class="catalog__list">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+  <header class="header">
+    <nav class="header__nav">
+      <div class="header__top header-top">
+        <div class="header-top__container container">
+          <ul class="header-top__list">
+            <li class="header-top__item">
+              <a class="header-top__link header-top__link--address" href="#">Адрес и время доставки</a>
+            </li>
+            <li class="header-top__item">
+              <a class="header-top__link header-top__link--tel" href="tel:+7907288365">Горячая линия 24/7</a>
+            </li>
           </ul>
-        </div>
-        
-        <form class="header-bottom__form form" action="#">
-          <label class="sr-only" for="search">Поиск по магазину</label>
-          <input class="form__input" id="search" type="search" name="search" placeholder="Найти в магазине ..." required >
-          <button class="form__btn" type="submit">Поиск</button>
-        </form>
 
-        <ul class="header-bottom__user-nav user-nav">
-          <li class="user-nav__item">
-            <a class="user-nav__link user-nav__link--user" href="#">
-              <span class="sr-only">Личный кабинет</span>
-            </a>
-          </li>
-          <li class="user-nav__item">
-            <a class="user-nav__link user-nav__link--favorite" href="#">
-              <span class="user-nav__num">12</span>
-              <span class="sr-only">Избранное</span>
-            </a>
-          </li>
-          <li class="user-nav__item">
-            <button class="user-nav__link user-nav__link--cart" href="#">
-              <span class="user-nav__num">12</span>
-              <span class="sr-only">Корзина товаров</span>
-            </button>
-          </li>
-        </ul>
+          <ul class="header-top__list header-top__list--hidden">
+            <li class="header-top__item">
+              <a class="header-top__link" href="#">Доставка</a>
+            </li>
+            <li class="header-top__item">
+              <a class="header-top__link" href="#">О нас</a>
+            </li>
+            <li class="header-top__item">
+              <a class="header-top__link" href="#">Новости</a>
+            </li>
+          </ul>
+
+          <button class="header-top__burger burger" type="button">
+            <span class="burger__item"></span>
+            <span class="sr-only">кнопка меню</span>
+          </button>
+
+          <div class="mob-menu">
+            <div class="mob-menu__header">
+              <a class="mob-menu__logo logo" href="#">
+                <img src="images/logo-green.svg" width="200" height="60" alt="Логотип">
+              </a>
+      
+              <button class="mob-menu__btn-close btn-close" type="button">
+                <span class="btn-close__item"></span>
+                <span class="sr-only">Кнопка закрытия</span>
+              </button>
+            </div>
+      
+            <div class="mob-menu__user-links">
+              <a class="mob-menu__user-link mob-menu__user-link--user" href="#">Вход</a>
+              <a class="mob-menu__user-link" href="#">Регистрация</a>
+            </div>
+            
+            <a class="mob-menu__catalog" href="#">Каталог товаров</a>
+      
+            <address class="mob-menu__contacts">
+              <ul class="mob-menu__contacts-list">
+                <li class="mob-menu__contacts-item">
+                  <a class="mob-menu__contacts-link mob-menu__contacts-link--tel" href="tel:+7907288365">+7 907 288 365</a>
+                </li>
+                <li class="mob-menu__contacts-item">
+                  <a class="mob-menu__contacts-link mob-menu__contacts-link--location" href="#">Санкт-Петербург, ул. Ленина, 1</a>
+                </li>
+              </ul>
+      
+              <ul class="mob-menu__socials socials">
+                <li class="socials__item">
+                  <a class="socials__link socials__link--face" href="#" target="_blank">
+                    <span class="sr-only">Фейсбук</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--you" href="#" target="_blank">
+                    <span class="sr-only">Ютуб</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--tel" href="#" target="_blank">
+                    <span class="sr-only">Телеграмм</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--inst" href="#" target="_blank">
+                    <span class="sr-only">Инстаграмм</span>
+                  </a>
+                </li>
+              </ul>
+            </address>
+      
+            <ul class="mob-menu__menu">
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Доставка</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">О Нас</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Новости</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Контакты</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Акции</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Вакансии</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Отзывы</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Публичная оферта</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
   
-</header>
-
-<main class="main">
-  <h1 class="sr-only">ФрешОк онлайн-маркет</h1>
-  <section class="slider-promotion">
-    <h2 class="sr-only">Актуальные акции и распродажи</h2>
-    <button class="slider-promotion__prev" type="button">
-      <span class="sr-only">Предыдущий слайд</span>
-    </button>
-    <ul class="slider-promotion__wrapper">
-      <li class="slider-promotion__item"  style="background-image: url('images/slider/promotion/slide-1.jpg');">
-        <div class="slider-promotion__container container">
-          <div class="slider-promotion__box">
-            <h3 class="slider-promotion__title">
-              Свежачок вам в хату
-              <span>скидка -50%</span>
-            </h3>
-            <p class="slider-promotion__desc">Только с 7 по 13 июля скидка на сезонные фрукты и овощи до 50%. Торопитесь!</p>
-            <button class="slider-promotion__btn btn" type="button">Купить сейчас</button>
-          </div>
-        </div>
-      </li>
-
-      <li class="slider-promotion__item"  style="background-image: url('images/slider/promotion/slide-2.jpg');">
-        <div class="slider-promotion__container container">
-          <div class="slider-promotion__box">
-            <h3 class="slider-promotion__title">
-              Накрути себе томатов
-              <span>Акция: 3 кг по цене 1</span>
-            </h3>
-            <p class="slider-promotion__desc">Только с 12 по 15 июля скидка на домашние помидорчики</p>
-            <button class="slider-promotion__btn btn" type="button">Купить сейчас</button>
-          </div>
-        </div>
-      </li>
-
-      <li class="slider-promotion__item"  style="background-image: url('images/slider/promotion/slide-3.jpg');">
-        <div class="slider-promotion__container container">
-          <div class="slider-promotion__box">
-            <h3 class="slider-promotion__title">
-              Пусть остальные позеленеют от зависти
-              <span>Распродажа зелени</span>
-            </h3>
-            <button class="slider-promotion__btn btn" type="button">Купить сейчас</button>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <button class="slider-promotion__next" type="button">
-      <span class="sr-only">Следующий слайд</span>
-    </button>
-
-  </section>
-
-  <section class="advantages">
-    <div class="container">
-      <h2 class="sr-only">Наши преимущества</h2>
-      <ul class="advantages__items">
-        <li class="advantages__item advantages__item--delivery">
-          <div class="advantages__text">
-            <h3 class="advantages__title">Бесплатная доставка</h3>
-            <p class="advantages__desc">Для заказов на сумму от 500 ₽</p>
-          </div>
-        </li>
-
-        <li class="advantages__item advantages__item--refund">
-          <div class="advantages__text">
-            <h3 class="advantages__title">Возврат товара</h3>
-            <p class="advantages__desc">Если товары были испорчены</p>
-          </div>
-        </li>
-
-        <li class="advantages__item advantages__item--supp">
-          <div class="advantages__text">
-            <h3 class="advantages__title">Поддержка 24/7</h3>
-            <p class="advantages__desc">Лучшие операторы</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="top-product wrap">
-    <div class="container" data-ref="container-1">
-      <h2 class="top-product__title title">Топовые товары</h2>
-
-      <ul class="top-product__filter-nav filter-nav">
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter="all">Все товары</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-a">Фрукты</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-b">Овощи</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-c">Напитки</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-d">Бакалея</button>
-        </li>
-      </ul>
-
-      <ul class="top-product__catalog">
-        <li class="top-product__item mix category-a">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-              <span class="badges__item badges__item--sale badges__item--on">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/1.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Ананас, 1кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price product-card__price--on">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    999 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-a">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/2.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Лимон, 1кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    199 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-a">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top badges__item--on">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/3.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Питахайя красная с белой мякотью, 1шт</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    1019 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-d">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/4.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Кетчуп томатный детский органический Bio-Zentrale 500мл, 1 шт</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    600 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-b">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top badges__item--on">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/5.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Морковь молодая с бабушкиной грядки, 1кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    49 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-c">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new">Новинка</span>
-              <span class="badges__item badges__item--sale badges__item--on">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/6.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Напиток сокосодержащий Sanpellegrino Aranciata Orange Красный апельсин безалкоголь...</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price product-card__price--on">
-                    299 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    199 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-d">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/7.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Кофе с коноплей органический Caffé Salomoni 250г</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    877 <span class="product-card__value">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="top-product__item mix category-b">
-          <article class="top-product__product-card product-card">
-            <div class="product-card__badges badges">
-              <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-              <span class="badges__item badges__item--sale">-50%</span>
-              <span class="badges__item badges__item--top">Хит</span>
-            </div>
-            <button class="product-card__favorite" type="button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
-            
-            <div class="product-card__images">
-              <img class="product-card__img" src="images/products/8.jpg" width="300" height="215" alt="Ананас">
-              <a class="product-card__img-link" href="#">
-                <span class="sr-only">Кнопка увелечения</span>
-              </a>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Перец оранжевый, 1кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__prices">
-                  <span class="product-card__old-price">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__price product-card__price--on">
-                    349 <span class="product-card__value ">₽</span>
-                  </span>
-                </div>
-                <button class="product-card__btn btn" type="button">
-                  <span class="sr-only">Добавить в корзину</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </li>
-      </ul>
-
-      
-      <button class="top-product__btn btn btn--white" type="button">Показать еще</button>
-      
-      
-    </div>
-  </section>
-
-  <section class="banners banners-wrap">
-    <h2 class="sr-only">Баннеры рекламы</h2>
-    <div class="banners__container container">
-      <ul class="banners__list">
-        <li class="banners__item banners--white" style="background-image: url('images/banners/1.jpg');">
-          <div class="banners__news">
-            <h3 class="banners__title">Свежайшие фрукты</h3>
-            <p class="banners__text">Начни фруктовое лето всего от 99 ₽</p>
-            <a class="banners__link" href="#">перейти к покупкам</a>
-          </div>
-        </li>
-
-        <li class="banners__item" style="background-image: url('images/banners/2.jpg');">
-          <div class="banners__news">
-            <h3 class="banners__title">Сезонная распродажа</h3>
-            <p class="banners__text">овощепад до -50%</p>
-            <a class="banners__link" href="#">перейти к покупкам</a>
-          </div>
-        </li>
-
-        <li class="banners__item" style="background-image: url('images/banners/3.jpg');">
-          <div class="banners__news">
-            <h3 class="banners__title">Ням-ням</h3>
-            <p class="banners__text">свежий хлебчик</p>
-            <a class="banners__link" href="#">перейти к покупкам</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="promo wrap">
-    <div class="promo__container container" data-ref="container-2">
-      <h2 class="title">Акции</h2>
-
-      <ul class="promo__filter-nav filter-nav">
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter="all">Все товары</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-a">Новинки</button>
-        </li>
-        <li class="filter-nav__item">
-          <button class="filter-nav__btn" type="button" data-filter=".category-b">Хиты</button>
-        </li>
-      </ul>
-
-      <ul class="promo__catalog">
-        <li class="promo__item mix category-a">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/1.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Ананас, 1кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes product-card__stock-item--on">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    1999 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.5</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-a">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/2.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Кофе с коноплей органический Caffé Salomoni 250г</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes ">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no product-card__stock-item--on">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    777 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    877 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.9</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-a">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/3.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Клубника, 1 кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes ">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end product-card__stock-item--on">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    440 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    600 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">5.0</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-a">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/4.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Манго, 1 шт</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes product-card__stock-item--on">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    660 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    960 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">5.0</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-a">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new badges__item--on">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/5.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Лосось, 1 кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes product-card__stock-item--on">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    1199 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.5</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-b">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top badges__item--on">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/6.jpg" width="100" height="100" alt="Ананас">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Сок Granini овощной 100%, 0.5л</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes ">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no product-card__stock-item--on">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    180 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    230 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.9</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-b">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top badges__item--on">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/7.jpg" width="100" height="100" alt="Товар">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Фруктовая корзина, 1 шт</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes product-card__stock-item--on">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    3999 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    5999 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.8</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li class="promo__item mix category-b">
-          <article class="promo__product-card product-card-min product-card ">
-            <div class="product-card__top">
-              <div class="product-card__badges badges">
-                <span class="badges__item badges__item--new">Новинка</span>
-                <span class="badges__item badges__item--sale ">-50%</span>
-                <span class="badges__item badges__item--top badges__item--on">Хит</span>
-              </div>
-
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/promo/8.jpg" width="100" height="100" alt="Товары">
-              </div>
-            </div>
-
-            <div class="product-card__desc">
-              <h3 class="product-card__title">
-                <a class="product-card__link" href="#">Свинина мякоть, 1 кг</a>
-              </h3>
-              <div class="product-card__bottom">
-                <div class="product-card__stock">
-                  <span class="product-card__stock-item product-card__stock-item--yes product-card__stock-item--on">В наличии</span>
-                  <span class="product-card__stock-item product-card__stock-item--no">Заканчивается</span>
-                  <span class="product-card__stock-item product-card__stock-item--end">Нет в наличии</span>
-                </div>
-                <div class="product-card__prices">
-                  <span class="product-card__price product-card__price--on">
-                    499 <span class="product-card__value">₽</span>
-                  </span>
-                  <span class="product-card__old-price product-card__price--on">
-                    599 <span class="product-card__value">₽</span>
-                  </span>
-
-                  <div class="product-card__star">4.6</div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        
-        
-      
-      </ul>
-
-      <button class="promo__btn btn" type="button">Показать еще</button>
-    </div>
-  </section>
-
-  <section class="slider-brands wrap">
-    <h2 class="sr-only">Наши брэнды</h2>
-    <div class="slider-brands__container container">
-      <ul class="slider-brands__wrapper">
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/sprite.svg" alt="Спрайт">
-            </a>
-          </div>
-        </li>
-
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/dr-pepper.svg" alt="Пэппер">
-            </a>
-          </div>
-        </li>
-
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/cola.svg" alt="Кока-кола">
-            </a>
-          </div>
-        </li>
-
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/pepsi.svg" alt="Пэпси">
-            </a>
-          </div>
-        </li>
-
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/redbull.svg" alt="Рэдбул">
-            </a>
-          </div>
-        </li>
-
-        <li class="slider-brands__items">
-          <div class="slider-brands__item">
-            <a class="slider-brands__link" href="#">
-              <img class="slider-brands__img" width="80" src="images/slider/brands/fanta.svg" alt="Фанта">
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="news">
-    <div class="news__container container">
-      <div class="news__top">
-        <h2 class="news__title title">наши новости</h2>
-        <a class="news__link" href="#">все новости</a>
-      </div>
-
-      <ul class="news__items">
-        <li class="news__item">
-          <a class="news__card" href="#">
-            <div class="news__date">
-              <span class="news__day">июль</span>
-              <span class="news__month">15</span>
-            </div>
-            <img class="news__img" src="images/news/1.jpg" width="410" height="240" alt="События">
-            <p class="news__text">Событие этого лета: распродажа сезонных фруктов в онлайн-маркете ФрешОК. Торопись, пока всё не разобрали!</p>
+      <div class="header__bottom header-bottom">
+        <div class="header-bottom__container container">
+          <a class="header-bottom__logo logo" href="#">
+            <img class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип онлайн-маркета ФрешОк">
+            <img class="logo__img logo__img--short" src="images/logo-short.svg" width="35" height="40" alt="логотип онлайн-маркета ФрешОк">
           </a>
-        </li>
-
-        <li class="news__item">
-          <a class="news__card" href="#">
-            <div class="news__date">
-              <span class="news__day">май</span>
-              <span class="news__month">07</span>
-            </div>
-            <img class="news__img" src="images/news/2.jpg" width="410" height="240" alt="События">
-            <p class="news__text">Шикарнейший выбор манго в нашем онлайн-маркете</p>
-          </a>
-        </li>
-
-        <li class="news__item">
-          <a class="news__card" href="#">
-            <div class="news__date">
-              <span class="news__day">февраль</span>
-              <span class="news__month">20</span>
-            </div>
-            <img class="news__img" src="images/news/1.jpg" width="410" height="240" alt="События">
-            <p class="news__text">Всё, что вы хотели знать о папайя</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="footer__top footer-top">
-    <div class="container">
-      <a class="footer-top__logo logo" href="#">
-        <img  class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип онлайн-маркета ФрешОк">
-      </a>
-
-      <div class="footer-top__inner">
-          <div class="footer-top__letter">
-            <p class="footer-top__text">Следите за нашими акциями</p>
-            <form class="footer-top__form form" action="#">
-              <label class="sr-only" for="email">Поиск по магазину</label>
-              <input class="form__input" id="email" type="email" name="search" placeholder="email@email.com" required >
-              <button class="form__btn btn" type="submit">Подписаться</button>
-            </form>
+  
+          <div class="header-bottom__catalog header-catalog">
+            <button class="header-catalog__btn" type="button">Каталог продуктов</button>
+            <ul class="header-catalog__list">
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Овощи и фрукты</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Бакалея</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Молочные продукты</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Хлеб</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Мясо</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Колбаса</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Рыба</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Алкоголь</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Напитки</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Торты</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Мясо</a>
+              </li>
+              <li class="header-catalog__item">
+                <a class="header-catalog__link" href="#">Чай, кофе</a>
+              </li>
+            </ul>
           </div>
           
-          <ul class="footer-top__list">
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">О нас</a>
+          <form class="header-bottom__form form" action="#">
+            <label class="sr-only" for="search">Поиск по магазину</label>
+            <input class="form__input" id="search" type="search" name="search" placeholder="Найти в магазине ..." required>
+            <input class="form__input form__input--mob" id="search" type="search" name="search" placeholder="Я ищу ..." required>
+
+            <button class="form__btn" type="submit">Поиск</button>
+          </form>
+  
+          <ul class="header-bottom__user-nav user-nav">
+            <li class="user-nav__item">
+              <a class="user-nav__link user-nav__link--user" href="#">
+                <span class="sr-only">Личный кабинет</span>
+              </a>
             </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Контакты</a>
+            <li class="user-nav__item">
+              <a class="user-nav__link user-nav__link--favorite" href="#">
+                <span class="user-nav__num">12</span>
+                <span class="sr-only">Избранное</span>
+              </a>
             </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Публичная оферта</a>
+            <li class="user-nav__item user-nav__item--hidden">
+              <button class="user-nav__link user-nav__link--search" type="button">
+                <span class="sr-only">Поиск</span>
+              </button>
             </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Оплата и доставка</a>
-            </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Вакансии</a>
-            </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Навыки</a>
-            </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Отзывы</a>
-            </li>
-            <li class="footer-top__item">
-              <a class="footer-top__link" href="#">Новости</a>
+            <li class="user-nav__item">
+              <button class="user-nav__link user-nav__link--cart" type="button">
+                <span class="user-nav__num">12</span>
+                <span class="sr-only">Корзина товаров</span>
+              </button>
+
+              <div class="cart-box">
+                <div class="cart-box__top">
+                  <div class="cart-box__top-item">
+                    <span class="cart-box__item-title">Корзина</span>
+                    <button class="cart-box__item-btn" type="button">очистить корзину</button>
+                  </div>
+                  <button class="cart-box__btn-close btn-close">
+                    <span class="btn-close__item"></span>
+                    <span class="sr-only">Закрыть корзину</span>
+                  </button>
+                </div>
+            
+                <div class="cart-box__body">
+                  <ul class="cart-box__body-items">
+                    <li class="cart-box__body-item">
+                      <article class="cart-box__product-card product-card">
+                        <div class="product-card__images">
+                          <img class="product-card__img" src="images/cart-products/1.jpg" width="60" height="60" alt="Ананас">
+                        </div>
+            
+                        <button class="product-card__btn-close  btn-close--gray" type="button">
+                          <span class="btn-close__item"></span>
+                          <span class="sr-only">Кнопка закрытия</span>
+                        </button>
+            
+                        <div class="product-card__descr">
+                          <h3 class="product-card__title">
+                            <a class="product-card__link" href="#">Ананас, 1 кг</a>
+                          </h3>
+                         
+                          <div class="product-card__bottom">
+                            <div class="product-card__prices">
+                              <span class="product-card__price">
+                                999<span class="product-card__value">₽</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="product-card__counter counter-btn">
+                          <label class="sr-only" for="counter-btn">Счетчик товаров</label>
+                          <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
+          
+                          <span class="product-card__price-total">
+                            1998<span class="product-card__value">₽</span>
+                          </span>
+                        </div>
+                      </article>
+                    </li>
+            
+                    <li class="cart-box__body-item">
+                      <article class="cart-box__product-card product-card">
+                        <div class="product-card__images">
+                          <img class="product-card__img" src="images/cart-products/2.jpg" width="60" height="60" alt="Питахайя">
+                        </div>
+            
+                        <button class="product-card__btn-close  btn-close--gray" type="button">
+                          <span class="btn-close__item"></span>
+                          <span class="sr-only">Кнопка закрытия</span>
+                        </button>
+            
+                        <div class="product-card__descr">
+                          <h3 class="product-card__title">
+                            <a class="product-card__link" href="#">Питахайя красная с белой мякотью, 1шт</a>
+                          </h3>
+                         
+                          <div class="product-card__bottom">
+                            <div class="product-card__prices">
+                              <span class="product-card__price">
+                                1019<span class="product-card__value">₽</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="product-card__counter counter-btn">
+                          <label class="sr-only" for="counter-btn">Счетчик товаров</label>
+                          <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
+          
+                          <span class="product-card__price-total">
+                            2038<span class="product-card__value">₽</span>
+                          </span>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+            
+                <div class="cart-box__bottom">
+                  <div class="cart-box__price">
+                    <span class="cart-box__price-text">Товаров на сумму</span>
+                    <span class="cart-box__price-num">2038<span class="cart-box__price-value">₽</span></span>
+                  </div>
+                  <button class="cart-box__bottom-btn btn">Оформить заказ</button>
+                </div>
+              </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+   <main class="main">
+    <h1 class="sr-only">ФрешОк онлайн-маркет</h1>
 
-        <address class="footer-top__contacts contacts-footer">
-          <ul class="contacts-footer__list">
-            <li class="contacts-footer__item">
-              <a class="contacts-footer__link" href="tel:+7907288365">Горячая линия +7 907 288 365</a>
-            </li>
-            <li class="contacts-footer__item">
-              <a class="contacts-footer__link" href="#">Санкт-Петербург, ул. Ленина, 1</a>
-            </li>
-          </ul>
+  </main>
 
-          <ul class="footer-top__socials socials">
-            <li class="socials__item">
-              <a class="socials__link socials__link--face" href="#" target="_blank">
-                <span class="sr-only">Фейсбук</span>
-              </a>
-            </li>
-            <li class="socials__item">
-              <a class="socials__link socials__link--you" href="#" target="_blank">
-                <span class="sr-only">Ютуб</span>
-              </a>
-            </li>
-            <li class="socials__item">
-              <a class="socials__link socials__link--tel" href="#" target="_blank">
-                <span class="sr-only">Телеграмм</span>
-              </a>
-            </li>
-            <li class="socials__item">
-              <a class="socials__link socials__link--inst" href="#" target="_blank">
-                <span class="sr-only">Инстаграмм</span>
-              </a>
-            </li>
-          </ul>
-        </address>
+ <footer class="footer">
+    <div class="footer__top footer-top">
+      <div class="container">
+        <a class="footer-top__logo logo" href="#">
+          <img  class="logo__img" src="images/logo.svg" width="200" height="60" alt="логотип онлайн-маркета ФрешОк">
+        </a>
+
+        <div class="footer-top__inner">
+            <div class="footer-top__letter">
+              <p class="footer-top__text">Следите за нашими акциями</p>
+              <form class="footer-top__form form" action="#">
+                <label class="sr-only" for="email">Поиск по магазину</label>
+                <input class="form__input" id="email" type="email" name="search" placeholder="email@email.com" required >
+                <button class="form__btn btn" type="submit">Подписаться</button>
+              </form>
+            </div>
+            
+            <ul class="footer-top__list">
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">О нас</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Контакты</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Публичная оферта</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Оплата и доставка</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Вакансии</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Акции</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Отзывы</a>
+              </li>
+              <li class="footer-top__item">
+                <a class="footer-top__link" href="#">Новости</a>
+              </li>
+            </ul>
+
+  
+          <address class="footer-top__contacts contacts-footer">
+            <ul class="contacts-footer__list">
+              <li class="contacts-footer__item">
+                <a class="contacts-footer__link" href="tel:+7907288365">Горячая линия +7 907 288 365</a>
+              </li>
+              <li class="contacts-footer__item">
+                <a class="contacts-footer__link" href="#">Санкт-Петербург, ул. Ленина, 1</a>
+              </li>
+            </ul>
+
+            <ul class="footer-top__socials socials">
+              <li class="socials__item">
+                <a class="socials__link socials__link--face" href="#" target="_blank">
+                  <span class="sr-only">Фейсбук</span>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--you" href="#" target="_blank">
+                  <span class="sr-only">Ютуб</span>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--tel" href="#" target="_blank">
+                  <span class="sr-only">Телеграмм</span>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--inst" href="#" target="_blank">
+                  <span class="sr-only">Инстаграмм</span>
+                </a>
+              </li>
+            </ul>
+          </address>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="footer__bottom footer-bottom">
-    <div class="footer-bottom__container container">
-      <a class="footer-bottom__copyright" href="#">© 2021 Фрешок</a>
+    
+    <div class="footer__bottom footer-bottom">
+      <div class="footer-bottom__container container">
+        <a class="footer-bottom__copyright" href="#">© 2021 Фрешок</a>
 
-      <ul class="footer-bottom__accept">
-        <li class="footer-bottom__accept-item">
-          <img class="footer-bottom__img" width="93" height="29" src="images/visa.svg" alt="">
-        </li>
-        <li class="footer-bottom__accept-item">
-          <img class="footer-bottom__img" width="49" height="29" src="images/mastercard.svg" alt="Мастеркарт">
-        </li>
-      </ul>
+        <ul class="footer-bottom__accept">
+          <li class="footer-bottom__accept-item">
+            <img class="footer-bottom__img" width="93" height="29" src="images/visa.svg" alt="Виза">
+          </li>
+          <li class="footer-bottom__accept-item">
+            <img class="footer-bottom__img" width="49" height="29" src="images/mastercard.svg" alt="Мастеркард">
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>  
+
+  <script src="js/main.min.js"></script>
+</body>
+</html>

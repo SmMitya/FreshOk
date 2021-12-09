@@ -1,6 +1,10 @@
 .news {
   padding-bottom: 44px;
 
+  @include media-3 {
+    padding-bottom: 47px;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -70,8 +74,8 @@
 
     @include media-3 {
       margin-left: 0;
-
       width: 100%;
+
       &:not(:last-child) {
         margin-bottom: 15px;
       }
@@ -89,19 +93,17 @@
     padding-bottom: 18px;
     
     color: $dark-900;
-
-
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
+
+    @include media-2 {
+      padding-bottom: 14px;
+    }
 
     &:hover {
       .news__text {
          color: $green-900;
       }
-    }
-
-    @include media-2 {
-      padding-bottom: 14px;
     }
   }
 
@@ -151,7 +153,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 
     border-radius: 6px 6px 0 0 ;
   }
@@ -178,9 +180,5 @@
     @include media-3 {
       font-size: 14px;
     }
-  }
-
-  @include media-3 {
-    padding-bottom: 47px;
   }
 }

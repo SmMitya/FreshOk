@@ -1,17 +1,18 @@
 .promo {
   background-color: $silver-100 ;
+
   &__filter-nav {
     margin-bottom: 48px;
+
+    @include media-1 {
+      margin-bottom: 24px;
+    }
 
     .filter-nav {
 
       &__item {
-        margin: 0 15px;
+        margin: 0 12px;
       }
-    }
-
-    @include media-1 {
-      margin-bottom: 24px;
     }
   }
 

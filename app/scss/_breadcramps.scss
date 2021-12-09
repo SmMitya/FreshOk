@@ -1,0 +1,40 @@
+.breadcramps {
+  padding: 184px 0 24px;
+
+  line-height: 1.2;
+  color: $dark-500;
+
+  background-color: $silver-100;
+
+  @include media-1 {
+    padding-top: 174px;
+  }
+
+  @include media-3 {
+    padding-top: 142px;
+  }
+
+  @include media-4 {
+    padding-top: 136px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+
+    &:not(:last-child):after {
+      content: '';
+
+      margin-left: 4px;
+      width: 6px;
+      height: 10px;
+      mask: url('../images/sprite.svg#arrow-right') center / cover no-repeat;
+      background-color: $silver-600;
+    }
+  }
+}

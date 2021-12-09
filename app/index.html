@@ -40,6 +40,87 @@
             <span class="burger__item"></span>
             <span class="sr-only">кнопка меню</span>
           </button>
+
+          <div class="mob-menu">
+            <div class="mob-menu__header">
+              <a class="mob-menu__logo logo" href="#">
+                <img src="images/logo-green.svg" width="200" height="60" alt="Логотип">
+              </a>
+      
+              <button class="mob-menu__btn-close btn-close" type="button">
+                <span class="btn-close__item"></span>
+                <span class="sr-only">Кнопка закрытия</span>
+              </button>
+            </div>
+      
+            <div class="mob-menu__user-links">
+              <a class="mob-menu__user-link mob-menu__user-link--user" href="#">Вход</a>
+              <a class="mob-menu__user-link" href="#">Регистрация</a>
+            </div>
+            
+            <a class="mob-menu__catalog" href="#">Каталог товаров</a>
+      
+            <address class="mob-menu__contacts">
+              <ul class="mob-menu__contacts-list">
+                <li class="mob-menu__contacts-item">
+                  <a class="mob-menu__contacts-link mob-menu__contacts-link--tel" href="tel:+7907288365">+7 907 288 365</a>
+                </li>
+                <li class="mob-menu__contacts-item">
+                  <a class="mob-menu__contacts-link mob-menu__contacts-link--location" href="#">Санкт-Петербург, ул. Ленина, 1</a>
+                </li>
+              </ul>
+      
+              <ul class="mob-menu__socials socials">
+                <li class="socials__item">
+                  <a class="socials__link socials__link--face" href="#" target="_blank">
+                    <span class="sr-only">Фейсбук</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--you" href="#" target="_blank">
+                    <span class="sr-only">Ютуб</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--tel" href="#" target="_blank">
+                    <span class="sr-only">Телеграмм</span>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a class="socials__link socials__link--inst" href="#" target="_blank">
+                    <span class="sr-only">Инстаграмм</span>
+                  </a>
+                </li>
+              </ul>
+            </address>
+      
+            <ul class="mob-menu__menu">
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Доставка</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">О Нас</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Новости</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Контакты</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Акции</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Вакансии</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Отзывы</a>
+              </li>
+              <li class="mob-menu__menu-item">
+                <a class="mob-menu__menu-link" href="#">Публичная оферта</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
   
@@ -94,7 +175,9 @@
           
           <form class="header-bottom__form form" action="#">
             <label class="sr-only" for="search">Поиск по магазину</label>
-            <input class="form__input" id="search" type="search" name="search" placeholder="Найти в магазине ..." required >
+            <input class="form__input" id="search" type="search" name="search" placeholder="Найти в магазине ..." required>
+            <input class="form__input form__input--mob" id="search" type="search" name="search" placeholder="Я ищу ..." required>
+
             <button class="form__btn" type="submit">Поиск</button>
           </form>
   
@@ -120,198 +203,111 @@
                 <span class="user-nav__num">12</span>
                 <span class="sr-only">Корзина товаров</span>
               </button>
+
+              <div class="cart-box">
+                <div class="cart-box__top">
+                  <div class="cart-box__top-item">
+                    <span class="cart-box__item-title">Корзина</span>
+                    <button class="cart-box__item-btn" type="button">очистить корзину</button>
+                  </div>
+                  <button class="cart-box__btn-close btn-close">
+                    <span class="btn-close__item"></span>
+                    <span class="sr-only">Закрыть корзину</span>
+                  </button>
+                </div>
+            
+                <div class="cart-box__body">
+                  <ul class="cart-box__body-items">
+                    <li class="cart-box__body-item">
+                      <article class="cart-box__product-card product-card">
+                        <div class="product-card__images">
+                          <img class="product-card__img" src="images/cart-products/1.jpg" width="60" height="60" alt="Ананас">
+                        </div>
+            
+                        <button class="product-card__btn-close  btn-close--gray" type="button">
+                          <span class="btn-close__item"></span>
+                          <span class="sr-only">Кнопка закрытия</span>
+                        </button>
+            
+                        <div class="product-card__descr">
+                          <h3 class="product-card__title">
+                            <a class="product-card__link" href="#">Ананас, 1 кг</a>
+                          </h3>
+                         
+                          <div class="product-card__bottom">
+                            <div class="product-card__prices">
+                              <span class="product-card__price">
+                                999<span class="product-card__value">₽</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="product-card__counter counter-btn">
+                          <label class="sr-only" for="counter-btn">Счетчик товаров</label>
+                          <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
+          
+                          <span class="product-card__price-total">
+                            1998<span class="product-card__value">₽</span>
+                          </span>
+                        </div>
+                      </article>
+                    </li>
+            
+                    <li class="cart-box__body-item">
+                      <article class="cart-box__product-card product-card">
+                        <div class="product-card__images">
+                          <img class="product-card__img" src="images/cart-products/2.jpg" width="60" height="60" alt="Питахайя">
+                        </div>
+            
+                        <button class="product-card__btn-close  btn-close--gray" type="button">
+                          <span class="btn-close__item"></span>
+                          <span class="sr-only">Кнопка закрытия</span>
+                        </button>
+            
+                        <div class="product-card__descr">
+                          <h3 class="product-card__title">
+                            <a class="product-card__link" href="#">Питахайя красная с белой мякотью, 1шт</a>
+                          </h3>
+                         
+                          <div class="product-card__bottom">
+                            <div class="product-card__prices">
+                              <span class="product-card__price">
+                                1019<span class="product-card__value">₽</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+          
+                        <div class="product-card__counter counter-btn">
+                          <label class="sr-only" for="counter-btn">Счетчик товаров</label>
+                          <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
+          
+                          <span class="product-card__price-total">
+                            2038<span class="product-card__value">₽</span>
+                          </span>
+                        </div>
+                      </article>
+                    </li>
+                  </ul>
+                </div>
+            
+                <div class="cart-box__bottom">
+                  <div class="cart-box__price">
+                    <span class="cart-box__price-text">Товаров на сумму</span>
+                    <span class="cart-box__price-num">2038<span class="cart-box__price-value">₽</span></span>
+                  </div>
+                  <button class="cart-box__bottom-btn btn">Оформить заказ</button>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    
-    <div class="cart-box">
-      <div class="cart-box__top">
-        <div class="cart-box__top-item">
-          <span class="cart-box__item-title">Корзина</span>
-          <button class="cart-box__item-btn" type="button">очистить корзину</button>
-        </div>
-        <button class="cart-box__btn-close btn-close">
-          <span class="btn-close__item"></span>
-          <span class="sr-only">Кнопка закрытия</span>
-        </button>
-      </div>
-  
-      <div class="cart-box__body">
-        <ul class="cart-box__body-items">
-          <li class="cart-box__body-item">
-            <article class="cart-box__product-card product-card">
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/cart-products/1.jpg" width="60" height="60" alt="Товар">
-              </div>
-  
-              <button class="product-card__btn-close  btn-close--gray" type="button">
-                <span class="btn-close__item"></span>
-                <span class="sr-only">Кнопка закрытия</span>
-              </button>
-  
-              <div class="product-card__descr">
-                <h3 class="product-card__title">
-                  <a class="product-card__link" href="#">Ананас, 1 кг</a>
-                </h3>
-               
-                <div class="product-card__bottom">
-                  <div class="product-card__prices">
-                    <span class="product-card__price">
-                      999<span class="product-card__value">₽</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product-card__counter counter-btn">
-                <label class="sr-only" for="counter-btn">Счетчик товаров</label>
-                <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
-
-                <span class="product-card__price-total">
-                  1998<span class="product-card__value">₽</span>
-                </span>
-              </div>
-            </article>
-          </li>
-  
-          <li class="cart-box__body-item">
-            <article class="cart-box__product-card product-card">
-              <div class="product-card__images">
-                <img class="product-card__img" src="images/cart-products/2.jpg" width="60" height="60" alt="Товар">
-              </div>
-  
-              <button class="product-card__btn-close  btn-close--gray" type="button">
-                <span class="btn-close__item"></span>
-                <span class="sr-only">Кнопка закрытия</span>
-              </button>
-  
-              <div class="product-card__descr">
-                <h3 class="product-card__title">
-                  <a class="product-card__link" href="#">Питахайя красная с белой мякотью, 1шт</a>
-                </h3>
-               
-                <div class="product-card__bottom">
-                  <div class="product-card__prices">
-                    <span class="product-card__price">
-                      1019<span class="product-card__value">₽</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="product-card__counter counter-btn">
-                <label class="sr-only" for="counter-btn">Счетчик товаров</label>
-                <input class="product-card__counter-btn counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
-
-                <span class="product-card__price-total">
-                  2038<span class="product-card__value">₽</span>
-                </span>
-              </div>
-            </article>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="cart-box__bottom">
-        <div class="cart-box__price">
-          <span class="cart-box__price-text">Товаров на сумму</span>
-          <span class="cart-box__price-num">2038<span class="cart-box__price-value">₽</span></span>
-        </div>
-        <button class="cart-box__bottom-btn btn">Оформить заказ</button>
-      </div>
-    </div>
-
-    <div class="mob-menu">
-      <div class="mob-menu__header">
-        <a class="mob-menu__logo logo" href="#">
-          <img src="images/logo-green.svg" width="200" height="60" alt="Логотип">
-        </a>
-
-        <button class="mob-menu__btn-close btn-close" type="button">
-          <span class="btn-close__item"></span>
-          <span class="sr-only">Кнопка закрытия</span>
-        </button>
-      </div>
-
-      <div class="mob-menu__user-links">
-        <a class="mob-menu__user-link mob-menu__user-link--user" href="#">Вход</a>
-        <a class="mob-menu__user-link" href="#">Регистрация</a>
-      </div>
-      
-      <a class="mob-menu__catalog" href="#">Каталог товаров</a>
-
-      <address class="mob-menu__contacts">
-        <ul class="mob-menu__contacts-list">
-          <li class="mob-menu__contacts-item">
-            <a class="mob-menu__contacts-link mob-menu__contacts-link--tel" href="tel:+7907288365">+7 907 288 365</a>
-          </li>
-          <li class="mob-menu__contacts-item">
-            <a class="mob-menu__contacts-link mob-menu__contacts-link--location" href="#">Санкт-Петербург, ул. Ленина, 1</a>
-          </li>
-        </ul>
-
-        <ul class="mob-menu__socials socials">
-          <li class="socials__item">
-            <a class="socials__link socials__link--face" href="#" target="_blank">
-              <span class="sr-only">Фейсбук</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link socials__link--you" href="#" target="_blank">
-              <span class="sr-only">Ютуб</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link socials__link--tel" href="#" target="_blank">
-              <span class="sr-only">Телеграмм</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link socials__link--inst" href="#" target="_blank">
-              <span class="sr-only">Инстаграмм</span>
-            </a>
-          </li>
-        </ul>
-      </address>
-
-      <ul class="mob-menu__menu">
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Доставка</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">О Нас</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Новости</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Контакты</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Акции</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Вакансии</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Отзывы</a>
-        </li>
-        <li class="mob-menu__menu-item">
-          <a class="mob-menu__menu-link" href="#">Публичная оферта</a>
-        </li>
-      </ul>
-    </div>
-
-    <form class="search-mob__form form">
-      <label class="sr-only" for="search">Поиск по магазину</label>
-      <input class="form__input" id="search" type="search" name="search" placeholder="Я ищу..." required >
-      <button class="form__btn" type="submit">Поиск</button>
-    </form>
   </header>
 
-  <main class="main">
+   <main class="main">
     <h1 class="sr-only">ФрешОк онлайн-маркет</h1>
     <section class="slider-promotion">
       <h2 class="sr-only">Актуальные акции и распродажи</h2>
@@ -369,9 +365,6 @@
           </div>
         </li>
       </ul>
-
-
-
     </section>
 
     <section class="advantages">
@@ -778,10 +771,7 @@
           </li>
         </ul>
 
-        
         <button class="top-product__btn btn btn--white" type="button">Показать еще</button>
-        
-        
       </div>
     </section>
 
@@ -1335,12 +1325,12 @@
             <img class="footer-bottom__img" width="93" height="29" src="images/visa.svg" alt="Виза">
           </li>
           <li class="footer-bottom__accept-item">
-            <img class="footer-bottom__img" width="49" height="29" src="images/mastercard.svg" alt="Мастеркарт">
+            <img class="footer-bottom__img" width="49" height="29" src="images/mastercard.svg" alt="Мастеркард">
           </li>
         </ul>
       </div>
     </div>
-  </footer> 
+  </footer>  
 
   <script src="js/main.min.js"></script>
 </body>

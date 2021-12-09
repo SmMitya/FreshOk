@@ -1,6 +1,18 @@
 .slider-promotion {
   position: relative;
   padding-top: 160px;
+
+  @include media-1 {
+    padding-top: 150px;
+  }
+
+  @include media-3 {
+    padding-top: 118px;
+  }
+
+  @include media-4 {
+    padding-top: 112px;
+  }
   
   &__item {
     height: 100%;
@@ -21,8 +33,7 @@
     }
 
     @include media-3 {
-      padding: 0;
-
+      padding: 60px 0 51px;
       height: 320px;
     }
   }
@@ -106,6 +117,10 @@
     outline: transparent;
     transition: background-color 0.3s linear;
 
+    @include r(1550) {
+      display: none;
+    }
+
     &::before {
       content: '';
 
@@ -143,14 +158,10 @@
         background-color: $green-900;
       }
     }
-
-    @include r(1550) {
-      display: none;
-    }
   }
 
   &__prev {
-    left: 51px;
+    left: 60px;
 
     &::before {
       mask: url('../images/sprite.svg#arrow-left') center / cover no-repeat;
@@ -158,7 +169,7 @@
   }
 
   &__next {
-    right: 51px;
+    right: 60px;
 
     &::before {
       mask: url('../images/sprite.svg#arrow-right') center / cover no-repeat;
@@ -216,17 +227,5 @@
       background: $green-900;
       border: 1px solid $green-900;
     }
-  }
-
-  @include media-1 {
-    padding-top: 150px;
-  }
-
-  @include media-3 {
-    padding-top: 118px;
-  }
-
-  @include media-4 {
-    padding-top: 112px;
   }
 }

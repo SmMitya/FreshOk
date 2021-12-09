@@ -21,7 +21,20 @@ body {
 }
 
 .bg-gray {
-  background-color: rgba(0, 0, 0, 0.15);
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.hidden {
   overflow: hidden;
 }
 
@@ -132,6 +145,10 @@ body {
   height: 22px;
   margin-left: 7px;
 
+  @include media-2 {
+    display: block;
+  }
+
   &__item {
     display: block;
     height: 2px;
@@ -156,10 +173,6 @@ body {
     &::after {
       bottom: 0;
     }
-  }
-
-  @include media-2 {
-    display: block;
   }
 }
 
@@ -194,6 +207,10 @@ body {
     color: $dark-800;
 
     outline: transparent;
+
+    &--mob {
+      display: none;
+    }
   }
 
   &__btn {
@@ -236,6 +253,10 @@ body {
   justify-content: center;
   align-items: center;
 
+  @include media-3 {
+    flex-wrap: wrap;
+  }
+
   &__item {
     margin: 0 12px;
     
@@ -273,10 +294,6 @@ body {
     &--active {
       border-bottom: 3px solid rgba(99, 166, 14, 0.2);;
     }
-  }
-
-  @include media-3 {
-    flex-wrap: wrap;
   }
 }
 
@@ -559,8 +576,11 @@ body {
   flex-direction: row;
   padding: 12px 12px 11px 12px;
 
+  @include media-4 {
+    padding-bottom: 10px;
+  }
+
   .product-card {
-    
     &__images {
       max-width: 100px;
       padding-bottom: 36.51%;
@@ -645,9 +665,6 @@ body {
       }
     }
   }
-  @include media-4 {
-    padding-bottom: 10px;
-  }
 }
 
 .socials {
@@ -683,14 +700,14 @@ body {
     }
 
     &::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 32px;
+      content: '';
+      display: block;
+      width: 32px;
+      height: 32px;
 
-    background-color: $white;
+      background-color: $white;
 
-    transition: background-color 0.3s linear;
+      transition: background-color 0.3s linear;
     }
     
     &--face {

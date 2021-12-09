@@ -1,5 +1,10 @@
 .banners {
   padding-bottom: 45px;
+
+  @include media-3 {
+    padding-bottom: 33px;
+  }
+  
   &__list {
     display: flex;
     justify-content: space-between;
@@ -33,9 +38,22 @@
     background-repeat: no-repeat;
     border-radius: 6px;
 
+    @include media-3 {
+      margin-left: 15px;
+      margin-bottom: 15px;
+    }
+
+    @include media-4 {
+      padding: 78px 15px 38px;
+    }
+
     &--long {
       color: $white;
       flex: 1 1 630px;
+
+      @include media-1 {
+        flex: 100%;
+      }
   
       .banners__text {
         max-width: 346px;
@@ -44,19 +62,6 @@
       .banners__link {
         border-bottom-color: $white;
       }
-  
-      @include media-1 {
-        flex: 100%;
-      }
-    }
-
-    @include media-3 {
-      margin-left: 15px;
-      margin-bottom: 15px;
-    }
-
-    @include media-4 {
-      padding: 78px 15px 38px;
     }
   }
 
@@ -102,9 +107,5 @@
     padding-bottom: 4px;
     
     border-bottom: 2px solid $dark-500;
-  }
-
-  @include media-3 {
-    padding-bottom: 33px;
   }
 }

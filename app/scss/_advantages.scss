@@ -22,6 +22,10 @@
     max-width: 264px;
     width: 100%;
 
+    @include media-3 {
+      max-width: 100%;
+    }
+
     &:not(:last-child) {
       margin-right: 65px;
 
@@ -63,10 +67,6 @@
       &:before {
         mask: url('../images/sprite.svg#supp') center / cover no-repeat;
       }
-    }
-
-    @include media-3 {
-      max-width: 100%;
     }
   }
 

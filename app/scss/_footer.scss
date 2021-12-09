@@ -126,19 +126,15 @@
       &::after {
         content: '';
         position: absolute;
-        left: -36px;
+        left: -37px;
         bottom: 0;
         
         display: block;
-        width: 124%;
+        width: calc(100% + 74px);
         height: 1px;
 
         background-color:rgba(255, 255, 255, 0.1);
       }
-    }
-
-    @include media-4 {
-      
     }
   }
   
@@ -175,11 +171,11 @@
       &::after {
         content: '';
         position: absolute;
-        left: -36px;
+        left: -37px;
         bottom: 0;
         
         display: block;
-        width: 124%;
+        width: calc(100% + 74px);
         height: 1px;
 
         background-color:rgba(255, 255, 255, 0.1);
@@ -188,7 +184,9 @@
   }
 
   &__socials {
-    justify-content: center;
+    @include media-3 {
+      justify-content: center;
+    }
   }
 }
 
@@ -244,6 +242,10 @@
     transition: opacity 0.3s linear,
                 color 0.3s linear;
 
+    @include media-3 {
+      order: 2;
+    }
+
     &:focus {
       box-shadow: 0 0 0 3px $green-200;
       border-radius: 3px;
@@ -258,10 +260,6 @@
       box-shadow: none;
       opacity: 1;
     }  
-
-    @include media-3 {
-      order: 2;
-    }
   }
 
   &__accept {
