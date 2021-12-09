@@ -1,6 +1,6 @@
 $(function() {
 
-  //Btn filter
+  // Btn filter
   $('.top-filters__btn--filter').on('click', function (){
     $('.catalog-page__filter').addClass('catalog-page__filter--active');
     $('body').addClass('bg-gray hidden');
@@ -9,13 +9,7 @@ $(function() {
 
   $('.filter-catalog__btn-close').on('click', function (){
     $('.catalog-page__filter').removeClass('catalog-page__filter--active');
-    $('body').removeClass('bg-gray hidden');
-    $('.header').removeClass('bg-gray');
-  });
-
-  $(document).on('click', function (e) {
-    if ( !$('.top-filters__btn--filter').is(e.target) && !$('.catalog-page__filter').is(e.target) && $('.catalog-page__filter').has(e.target).length === 0) {
-      $('.catalog-page__filter').removeClass('catalog-page__filter--active');
+    if ( $('body').hasClass('bg-gray hidden') && $('.header').hasClass('bg-gray') ) {
       $('body').removeClass('bg-gray hidden');
       $('.header').removeClass('bg-gray');
     };
@@ -141,16 +135,21 @@ $(function() {
   });
 
   $('.mob-menu a, .mob-menu button').on('click', function (){
-    $('body').removeClass('bg-gray hidden');
-    $('.header').removeClass('bg-gray');
+    if ( $('body').hasClass('bg-gray hidden') && $('.header').hasClass('bg-gray') ) {
+      $('body').removeClass('bg-gray hidden');
+      $('.header').removeClass('bg-gray');
+    };
     mobMenu.slideUp();
   });
 
   $(document).on('click', function (e) {
-    if ( !burgerBtn.is(e.target) && !$('.burger__item').is(e.target) && !mobMenu.is(e.target) && mobMenu.has(e.target).length === 0) {
+    if ( !burgerBtn.is(e.target) && !$('.burger__item').is(e.target) && !mobMenu.is(e.target) && mobMenu.has(e.target).length === 0 && !$('.top-filters__btn--filter').is(e.target) && !$('.catalog-page__filter').is(e.target) && $('.catalog-page__filter').has(e.target).length === 0) {
+      $('.catalog-page__filter').removeClass('catalog-page__filter--active');
       mobMenu.slideUp();
-      $('body').removeClass('bg-gray hidden');
-      $('.header').removeClass('bg-gray');
+      if ( $('body').hasClass('bg-gray hidden') && $('.header').hasClass('bg-gray') ) {
+        $('body').removeClass('bg-gray hidden');
+        $('.header').removeClass('bg-gray');
+      };
     };
   });
 
