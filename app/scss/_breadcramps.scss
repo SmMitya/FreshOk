@@ -20,12 +20,21 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+
+    @include media-3 {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
   }
 
   &__item {
     display: flex;
-    align-items: center;
     margin-right: 6px;
+
+    align-items: center;
+
 
     &:not(:last-child):after {
       content: '';

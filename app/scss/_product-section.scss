@@ -1,0 +1,256 @@
+.product-section {
+  &__container {
+    padding: 48px 0 72px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+  }
+}
+
+.product-content {
+  &__title {
+    margin-bottom: 18px;
+
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  &__badges {
+    margin-bottom: 18px;
+
+    .badges {
+      &__item {
+        padding: 6px 9px;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__box {
+    display: flex;
+  }
+
+  &__vendor {
+    padding: 4px 5px;
+    margin-right: 12px;
+
+    line-height: 1.2;
+    color: $silver-600;
+
+    background: $silver-100;
+    border-radius: 3px;
+  }
+
+  &__rate {
+    align-self: center;
+  }
+
+  &__stock-item {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+
+    &--instore {
+      color: $green-900;
+    }
+
+    &--ended {
+      color: $red-900;
+    }
+
+    &--no {
+      color: $silver-600;
+    }
+  }
+
+  &__prices {
+    margin-bottom: 60px;
+
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__old-price {
+    position: relative;
+
+    margin-right: 18px;
+
+    font-size: 20px;
+    color: $silver-600;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 13px;
+      left: 0;
+
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $silver-600;
+
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__price {
+    font-size: 30px;
+    color: $green-900;
+  }
+
+  &__counter {
+    margin-left: 24px;
+    margin-right: 18px;
+
+    .counter-btn {
+      &__input {
+        padding: 0 56px 0 20px;
+        .jq-number {
+          &__field {
+            width: 70px;
+            height: 44px;
+
+            input {
+              padding: 10px 17px;
+
+              font-size: 20px;
+            }
+          }
+
+          &__spin {
+            &.minus,
+            &.plus {
+              width: 44px;
+              height: 44px;
+            }
+      
+            &::after {
+              top: 50%;
+              left: 50%;
+              width: 29px;
+              height: 3px;
+      
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &__spin {
+            &.plus {
+              &:before {
+                top: 50%;
+                left: 50%;
+                width: 3px;
+                height: 29px;
+      
+                transform: translate(-50%, -50%);
+              }
+            }
+          } 
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+
+   &::before {
+    content: '';
+    margin-right: 13px;
+    width: 24px;
+    height: 23px;
+
+    mask: url('../images/sprite.svg#cart') center / cover no-repeat;
+    background-color: #fff;
+   }
+  }
+
+  &__favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    &::before {
+      content: '';
+      width: 44px;
+      height: 39px;
+
+      mask: url('../images/sprite.svg#favorite') center / cover no-repeat;
+      background-color: $silver-600;
+
+      
+      transition: background-color 0.3s linear,
+                  opacity 0.3s linear;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px #E0EDCF;
+      border-radius: 3px;
+    }
+
+    &:hover {
+      &::before {
+        background-color: $yellow-900;
+      }
+    }
+    
+    &:active {
+      box-shadow: none;
+    }
+
+    &:active {
+      &::before {
+        background-color: $yellow-900;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__delivery-title {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+
+    font-family: 'Ruda', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+
+    border-bottom: 1px solid $silver-600;
+  }
+
+  &__delivery-text {
+    margin-bottom: 18px;
+
+    color: $dark-500;
+    line-height: 1.6;
+  }
+
+  &__delivery-link {
+    color: $green-900;
+  }
+}

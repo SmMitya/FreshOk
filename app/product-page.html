@@ -309,7 +309,97 @@
 
    <main class="main">
     <h1 class="sr-only">ФрешОк онлайн-маркет</h1>
+    <section class="breadcramps">
+      <h2 class="sr-only">Навигация по страницам</h2>
 
+      <div class="breadcramps__container container">
+        <ul class="breadcramps__list">
+          <li class="breadcramps__item">
+            <a class="breadcramps__link" href="#">Главная</a>
+          </li>
+          <li class="breadcramps__item">
+            <a class="breadcramps__link" href="#">Каталог товаров</a>
+          </li>
+          <li class="breadcramps__item">
+            <a class="breadcramps__link" href="#">Питахайя красная с белой мякотью</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2 class="sr-only">Карточка товара</h2>
+      <div class="product-section__container container">
+        <div class="product-section__item">
+          <ul class="product-section__slide">
+            <li class="product-section__slide-item">
+              <a class="product-section__slide-link" href="#">
+                <img class="product-section__slide-img" src="images/products/gallery/1.jpg" alt="Питахайя красная с белой мякотью">
+              </a>
+            </li>
+          </ul>
+
+          <div class="product-section__content product-content">
+            <h3 class="product-content__title">Питахайя красная с белой мякотью</h3>
+
+            <div class="product-content__badges badges">
+              <span class="badges__item badges__item--new">Новинка</span>
+              <span class="badges__item badges__item--sale">-50%</span>
+              <span class="badges__item badges__item--top badges__item--on">Хит</span>
+            </div>
+
+            <div class="product-content__item">
+              <div class="product-content__box">
+                <span class="product-content__vendor">Код: 0111111</span>
+                <span class="product-content__rate rate" data-rateyo-rating="4"></span>
+              </div>
+
+              <div class="product-content__stock">
+                <span class="product-content__stock-item product-content__stock-item--instore">В наличии</span>
+              </div>
+            </div>
+            
+            <div class="product-content__prices">
+              <span class="product-content__old-price">
+                299 <span class="product-content__value">₽</span>
+              </span>
+
+              <span class="product-content__price">
+                199 <span class="product-content__value">₽</span>
+              </span>
+            </div>
+
+            <div class="product-content__item">
+              <div class="product-content__box">
+                <div class="product-content__counter counter-btn">
+                  <label class="sr-only" for="counter-btn">Счетчик товаров</label>
+                  <input class="counter-btn__input" id="counter-btn" type="number" name="counter-btn" min="0" max="99" value="2">
+                </div>
+                <button class="product-content__btn btn" type="button">Добавить в корзину</button>
+              </div>
+
+              <button class="product-content__favorite" type="button" aria-label="Добавить в избранное"></button>
+            </div>
+
+            <div class="product-content__delivery">
+              <p class="product-content__delivery-title">Доставка и оплата</p>
+              <div class="product-content__delivery-text">
+                <p>Минимальная сумма заказа - 100 руб.</p>
+                <p>Время доставки заказа - 60-120 мин.</p>
+                <p>Оплата осуществляется только банковской картой.</p>
+                <p>Окончательная сумма заказа формируется после сбора товаров.</p>
+              </div>
+            </div>
+
+            <a class="product-content__delivery-link" href="#">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="product-section__tabs">
+
+        </div>
+      </div>
+    </section>
   </main>
 
  <footer class="footer">

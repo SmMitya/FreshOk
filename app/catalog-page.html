@@ -310,7 +310,7 @@
    <main class="main">
     <h1 class="sr-only">ФрешОк онлайн-маркет</h1>
     <section class="breadcramps">
-      <h2 class="sr-only">Хлебные крошки</h2>
+      <h2 class="sr-only">Навигация по страницам</h2>
 
       <div class="breadcramps__container container">
         <ul class="breadcramps__list">
@@ -331,11 +331,11 @@
         <div class="catalog-page__inner">
           <ul class="catalog-page__filter">
             <li class="catalog-page__filter-item filter-catalog">
-              <button class="filter-catalog__btn categories-btn" type="button">
+              <button class="filter-catalog__btn filter-catalog__btn--categories" type="button">
                 <h3 class="filter-catalog__title">Категории</h3>
               </button>
               
-              <ul class="filter-catalog__list categories-btn__list filter-categories">
+              <ul class="filter-catalog__list filter-catalog__list--categories">
                 <li class="filter-catalog__item">
                   <a class="filter-catalog__link" href="#">Овощи и фрукты</a>
                 </li>
@@ -364,61 +364,66 @@
             </li>
 
             <li class="catalog-page__filter-item filter-catalog">
-              <button class="filter-catalog__btn offer-btn" type="button">
+              <button class="filter-catalog__btn filter-catalog__btn--offer" type="button">
                 <h3 class="filter-catalog__title">Предложения</h3>
               </button>
               
-              <form class="filter-catalog__form filter-catalog__list offer-btn__list" action="#">
+              <form class="filter-catalog__form filter-catalog__form--offer" action="#">
                 <input class="filter-catalog__input" id="sale" type="checkbox" name="sale">
-                <label class="filter-catalog__label filter-catalog__item" for="sale">Со скидкой</label>
+                <label class="filter-catalog__label" for="sale">Со скидкой</label>
                 
                 <input class="filter-catalog__input" id="new" type="checkbox" name="new" checked>
-                <label class="filter-catalog__label filter-catalog__item" for="new">Новинка</label>
+                <label class="filter-catalog__label" for="new">Новинка</label>
 
                 <input class="filter-catalog__input" id="hit" type="checkbox" name="hit">
-                <label class="filter-catalog__label filter-catalog__item" for="hit">Хит</label>
+                <label class="filter-catalog__label" for="hit">Хит</label>
               </form>
             </li>
 
             <li class="catalog-page__filter-item filter-catalog">
-              <button class="filter-catalog__btn brand-btn" type="button">
+              <button class="filter-catalog__btn filter-catalog__btn--brand" type="button">
                 <h3 class="filter-catalog__title">Бренд</h3>
               </button>
               
-              <form class="filter-catalog__form filter-catalog__list brand-btn__list" action="#">
+              <form class="filter-catalog__form filter-catalog__form--brand" action="#">
                 <input class="filter-catalog__input" id="CocaCola" type="checkbox" name="CocaCola">
-                <label class="filter-catalog__label filter-catalog__item" for="CocaCola">CocaCola</label>
+                <label class="filter-catalog__label" for="CocaCola">CocaCola</label>
                 
                 <input class="filter-catalog__input" id="Pepsi" type="checkbox" name="Pepsi">
-                <label class="filter-catalog__label filter-catalog__item" for="Pepsi">Pepsi</label>
+                <label class="filter-catalog__label" for="Pepsi">Pepsi</label>
 
                 <input class="filter-catalog__input" id="Sprite" type="checkbox" name="Sprite">
-                <label class="filter-catalog__label filter-catalog__item" for="Sprite">Sprite</label>
+                <label class="filter-catalog__label" for="Sprite">Sprite</label>
 
                 <input class="filter-catalog__input" id="Fanta" type="checkbox" name="Fanta">
-                <label class="filter-catalog__label filter-catalog__item" for="Fanta">Fanta</label>
+                <label class="filter-catalog__label" for="Fanta">Fanta</label>
 
                 <input class="filter-catalog__input" id="RedBull" type="checkbox" name="RedBull">
-                <label class="filter-catalog__label filter-catalog__item" for="RedBull">RedBull</label>
+                <label class="filter-catalog__label" for="RedBull">RedBull</label>
 
                 <input class="filter-catalog__input" id="Dr Pepper" type="checkbox" name="Dr Pepper">
-                <label class="filter-catalog__label filter-catalog__item" for="Dr Pepper">Dr Pepper</label>
+                <label class="filter-catalog__label" for="Dr Pepper">Dr Pepper</label>
               </form>
             </li>
 
             <li class="catalog-page__filter-item filter-catalog">
-              <button class="filter-catalog__btn price-btn" type="button">
+              <button class="filter-catalog__btn filter-catalog__btn--price" type="button">
                 <h3 class="filter-catalog__title">Цена</h3>
               </button>
               
-              <form class="filter-catalog__form filter-catalog__list price-btn__list" action="#">
-                <label class="filter-catalog__range-label" for="range-slider">
-                  от <input class="filter-catalog__range-from"></input> 
+              <form class="filter-catalog__form filter-catalog__form--price" action="#">
+
+                <div class="filter-catalog__range-box">
+                  <label class="filter-catalog__range-label" for="from">от</label>
+                  <input class="filter-catalog__range-from" id="from" name="from"></input>
                   <span class="filter-catalog__range-value">₽</span>
 
-                  до <input class="filter-catalog__range-to"></input>
+                  <label class="" for="to">до</label>
+                  <input class="filter-catalog__range-to" id="to" name="to"></input>
                   <span class="filter-catalog__range-value">₽</span> 
-                </label>
+                </div>
+                
+                <label class="sr-only" for="range-slider">Фильтр цены</label>
                 <input class="filter-catalog__range-input" id="range-slider" type="text" name="range-slider">
               </form>
             </li>
@@ -436,7 +441,7 @@
               <form class="top-filters__form" action="#">
                 <label class="sr-only" for="sort-name">Сортировка по критерию</label>
                 
-                <select class="top-filters__select-name top-filters__select" id="sort-name" name="sort-name">
+                <select class="top-filters__select top-filters__select-name" id="sort-name" name="sort-name">
                   <option>По названию</option>
                   <option>По популярности</option>
                   <option>Сначала дешевые</option>
@@ -445,7 +450,7 @@
                 </select>
 
                 <label class="sr-only" for="sort-number">Сортировка по количеству</label>
-                <select class="top-filters__select-number top-filters__select" id="sort-number" name="sort-number">
+                <select class="top-filters__select top-filters__select-number" id="sort-number" name="sort-number">
                   <option>по 12</option>
                   <option>по 18</option>
                   <option>по 24</option>
@@ -474,9 +479,6 @@
                   <div class="product-card__images">
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/9.jpg" width="300" height="215" alt="Напиток Фонте Аква">
-                    </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
                     </a>
                   </div>
     
@@ -523,9 +525,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/2.jpg" width="300" height="215" alt="Лимон">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -570,9 +569,6 @@
                   <div class="product-card__images">
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/3.jpg" width="300" height="215" alt="Питахайя">
-                    </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
                     </a>
                   </div>
     
@@ -619,9 +615,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/5.jpg" width="300" height="215" alt="Морковь">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -666,9 +659,6 @@
                   <div class="product-card__images">
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/6.jpg" width="300" height="215" alt="Напиток сокосодержащий">
-                    </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
                     </a>
                   </div>
     
@@ -715,9 +705,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/7.jpg" width="300" height="215" alt="Кофе">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -763,9 +750,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/8.jpg" width="300" height="215" alt="Перец">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -810,9 +794,6 @@
                   <div class="product-card__images">
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/4.jpg" width="300" height="215" alt="Кетчуп">
-                    </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
                     </a>
                   </div>
     
@@ -860,9 +841,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/1.jpg" width="300" height="215" alt="Ананас">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -907,9 +885,6 @@
                   <div class="product-card__images">
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/5.jpg" width="300" height="215" alt="Морковь">
-                    </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
                     </a>
                   </div>
     
@@ -956,9 +931,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/6.jpg" width="300" height="215" alt="Напиток сокосодержащий">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -1004,9 +976,6 @@
                     <a class="product-card__image-link" href="#">
                       <img class="product-card__img" src="images/products/7.jpg" width="300" height="215" alt="Кофе">
                     </a>
-                    <a class="product-card__img-link" href="#">
-                      <span class="sr-only">Кнопка увелечения</span>
-                    </a>
                   </div>
     
                   <div class="product-card__descr">
@@ -1042,11 +1011,13 @@
               <button class="catalog-page__btn btn" type="button">Показать еще</button>
 
               <div class="catalog-page__pagination pagination">
-                <a class="pagination__prev pagination__link pagination__link--disabled">
-                  <span class="sr-only">Предыдущая страница</span>
-                </a>
-
                 <ul class="pagination__list">
+                  <li class="pagination__item">
+                    <a class="pagination__link pagination__link--prev pagination__link--disabled">
+                      <span class="sr-only">Предыдущая страница</span>
+                    </a>
+                  </li>
+
                   <li class="pagination__item">
                     <a class="pagination__link pagination__link--active" href="#">1</a>
                   </li>
@@ -1062,11 +1033,14 @@
                   <li class="pagination__item">
                     <a class="pagination__link" href="#">10</a>
                   </li>
+
+                  <li class="pagination__item">
+                    <a class="pagination__link pagination__link--next">
+                      <span class="sr-only">Следующая страница</span>
+                    </a>
+                  </li>
                 </ul>
                 
-                <a class="pagination__next pagination__link">
-                  <span class="sr-only">Следующая страница</span>
-                </a>
               </div>
             </div>
           </div>
